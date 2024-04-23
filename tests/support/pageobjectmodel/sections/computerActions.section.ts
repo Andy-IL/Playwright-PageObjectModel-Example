@@ -13,10 +13,16 @@ export default class ComputerActions {
   companySelect = () => this.page.locator("#company");
 
   // Actions
-  public async enterComputerDetails() {
-    await this.nameTextbox().fill("CommitQuality");
-    await this.introducedTextbox().fill("1999-12-12");
-    await this.introducedTextbox().fill("2000-12-12");
-    await this.companySelect().selectOption({ label: "Apple Inc." });
+  public async enterComputerDetails(name,introDate,discDate,company) {
+    await this.nameTextbox().fill(name);
+    await this.introducedTextbox().fill(introDate);
+    await this.discontinuedTextbox().fill(discDate);
+    await this.companySelect().selectOption({ label: company });
   }
+  // public async enterComputerDetails(name,introDate,discDate,company) {
+  //   await this.nameTextbox().fill("CommitQuality");
+  //   await this.introducedTextbox().fill("1999-12-12");
+  //   await this.introducedTextbox().fill("2000-12-12");
+  //   await this.companySelect().selectOption({ label: "Apple Inc." });
+  // }
 }

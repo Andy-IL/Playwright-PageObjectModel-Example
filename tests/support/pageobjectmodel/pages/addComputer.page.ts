@@ -1,6 +1,11 @@
 import { Page } from "@playwright/test";
 import ComputerActions from "../sections/computerActions.section";
 import ComputerDetails from "../sections/computerDetails.section";
+// let computerDetails: string[][] = [
+//   ["01", "nameInAddComputer", "1999-01-01", "2000-12-12","Apple Inc."], 
+//   ["02", "SecondNameInAddComputer", "1995-05-05", "2005-11-12", "ASUS" ]
+// ] ;
+
 export default class AddComputerPage {
   page: Page;
   computerDetails: ComputerDetails;
@@ -25,8 +30,9 @@ export default class AddComputerPage {
     await this.addComputerButton().click();
   }
 
-  public async addNewComputer() {
-    await this.computerActions.enterComputerDetails();
+  public async addNewComputer(name,introDate,discDate,company) {
+    // await this.computerActions.enterComputerDetails(computerDetails[0][1],computerDetails[0][2],computerDetails[0][3],computerDetails[0][4]);
+    await this.computerActions.enterComputerDetails(name,introDate,discDate,company) ;
     await this.computerDetails.createComputer();
   }
 }

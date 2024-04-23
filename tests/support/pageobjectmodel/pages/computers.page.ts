@@ -13,8 +13,9 @@ export default class ComputersPage {
 
   // Locators here
   addComputerButton = () => this.page.getByText("Add a new computer");
-  computerAddedLabel = () =>
-    this.page.getByText("Done ! Computer CommitQuality has been created");
+  computerAddedLabel   = () =>
+    // this.page.getByText("Done ! Computer CommitQuality has been created");
+    this.page.getByText("Done ! Computer  ");
 
   // Actions
   public async clickAddNewComputer() {
